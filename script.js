@@ -97,50 +97,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// Mode Switch Functionality
-document.addEventListener('DOMContentLoaded', function() {
-    const modeSwitch = document.getElementById('modeSwitch');
-    const modeIcon = modeSwitch.querySelector('.mode-icon');
-    
-    // Check for saved theme preference or default to dark
-    const currentTheme = localStorage.getItem('theme') || 'dark';
-    
-    // Apply the saved theme
-    if (currentTheme === 'light') {
-        document.body.classList.add('white-glass');
-        modeIcon.textContent = '🌙';
-    }
-    
-    // Toggle theme function
-    function toggleTheme() {
-        if (document.body.classList.contains('white-glass')) {
-            // Switch to dark mode
-            document.body.classList.remove('white-glass');
-            modeIcon.textContent = '☀️';
-            localStorage.setItem('theme', 'dark');
-        } else {
-            // Switch to light mode
-            document.body.classList.add('white-glass');
-            modeIcon.textContent = '🌙';
-            localStorage.setItem('theme', 'light');
-        }
-        // Update navbar background after theme change
-        if (typeof updateNavbarBackground === 'function') {
-            updateNavbarBackground();
-        }
-    }
-    
-    // Add multiple event listeners for better mobile support
-    modeSwitch.addEventListener('click', toggleTheme);
-    modeSwitch.addEventListener('touchstart', function(e) {
-        e.preventDefault(); // Prevent double-tap zoom on iOS
-        toggleTheme();
-    });
-    
-    // Add pointer events for better touch support
-    modeSwitch.style.cursor = 'pointer';
-    modeSwitch.style.touchAction = 'manipulation'; // Improve touch responsiveness
-});
 
 // Add scroll progress indicator
 document.addEventListener('DOMContentLoaded', function() {
