@@ -21,17 +21,15 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-
-
     // Navbar background change on scroll
     window.addEventListener('scroll', function() {
         const navbar = document.querySelector('.navbar');
         if (window.scrollY > 100) {
-            navbar.style.background = 'rgba(255, 255, 255, 0.95)';
-            navbar.style.boxShadow = '0 4px 30px rgba(0, 0, 0, 0.15)';
+            navbar.style.background = 'rgba(0, 0, 0, 0.95)';
+            navbar.style.boxShadow = '0 4px 30px rgba(0, 0, 0, 0.7)';
         } else {
-            navbar.style.background = 'rgba(255, 255, 255, 0.85)';
-            navbar.style.boxShadow = '0 4px 30px rgba(0, 0, 0, 0.1)';
+            navbar.style.background = 'rgba(0, 0, 0, 0.85)';
+            navbar.style.boxShadow = '0 4px 30px rgba(0, 0, 0, 0.5)';
         }
     });
 
@@ -70,120 +68,19 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Notification system
-function showNotification(message, type = 'info') {
-    // Remove existing notifications
-    const existingNotification = document.querySelector('.notification');
-    if (existingNotification) {
-        existingNotification.remove();
-    }
-    
-    // Create notification element
-    const notification = document.createElement('div');
-    notification.className = `notification notification-${type}`;
-    notification.innerHTML = `
-        <span>${message}</span>
-        <button class="notification-close">&times;</button>
-    `;
-    
-    // Add styles
-    notification.style.cssText = `
-        position: fixed;
-        top: 100px;
-        right: 20px;
-        background: ${type === 'error' ? '#e74c3c' : type === 'success' ? '#27ae60' : '#3498db'};
-        color: white;
-        padding: 15px 20px;
-        border-radius: 8px;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-        z-index: 10000;
-        display: flex;
-        align-items: center;
-        gap: 15px;
-        max-width: 400px;
-        animation: slideInRight 0.3s ease;
-    `;
-    
-    // Close button styles
-    const closeButton = notification.querySelector('.notification-close');
-    closeButton.style.cssText = `
-        background: none;
-        border: none;
-        color: white;
-        font-size: 18px;
-        cursor: pointer;
-        padding: 0;
-        width: 20px;
-        height: 20px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    `;
-    
-    // Add close functionality
-    closeButton.addEventListener('click', function() {
-        notification.style.animation = 'slideOutRight 0.3s ease';
-        setTimeout(() => {
-            notification.remove();
-        }, 300);
-    });
-    
-    // Auto-remove after 5 seconds
-    setTimeout(() => {
-        if (notification.parentNode) {
-            notification.style.animation = 'slideOutRight 0.3s ease';
-            setTimeout(() => {
-                notification.remove();
-            }, 300);
-        }
-    }, 5000);
-    
-    document.body.appendChild(notification);
-    
-    // Add keyframe animations
-    if (!document.querySelector('#notification-styles')) {
-        const style = document.createElement('style');
-        style.id = 'notification-styles';
-        style.textContent = `
-            @keyframes slideInRight {
-                from {
-                    transform: translateX(100%);
-                    opacity: 0;
-                }
-                to {
-                    transform: translateX(0);
-                    opacity: 1;
-                }
-            }
-            
-            @keyframes slideOutRight {
-                from {
-                    transform: translateX(0);
-                    opacity: 1;
-                }
-                to {
-                    transform: translateX(100%);
-                    opacity: 0;
-                }
-            }
-        `;
-        document.head.appendChild(style);
-    }
-}
-
-// Add some interactive elements to mythology cards
+// Add some interactive elements
 document.addEventListener('DOMContentLoaded', function() {
-    const mythCards = document.querySelectorAll('.myth-card');
-    
-    mythCards.forEach(card => {
-        card.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-10px) scale(1.02)';
+    // Add hover effect to the product image
+    const nectarImage = document.querySelector('.nectar-image');
+    if (nectarImage) {
+        nectarImage.addEventListener('mouseenter', function() {
+            this.style.transform = 'scale(1.05)';
         });
         
-        card.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(-5px) scale(1)';
+        nectarImage.addEventListener('mouseleave', function() {
+            this.style.transform = 'scale(1)';
         });
-    });
+    }
 });
 
 // Add scroll progress indicator
@@ -196,7 +93,7 @@ document.addEventListener('DOMContentLoaded', function() {
         left: 0;
         width: 0%;
         height: 3px;
-        background: linear-gradient(90deg, #8e44ad, #9b59b6);
+        background: linear-gradient(90deg, #4CAF50, #81C784);
         z-index: 1001;
         transition: width 0.1s ease;
     `;
