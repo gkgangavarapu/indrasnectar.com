@@ -130,8 +130,16 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-    // Add click event listener
+    // Add multiple event listeners for better mobile support
     modeSwitch.addEventListener('click', toggleTheme);
+    modeSwitch.addEventListener('touchstart', function(e) {
+        e.preventDefault(); // Prevent double-tap zoom on iOS
+        toggleTheme();
+    });
+    
+    // Add pointer events for better touch support
+    modeSwitch.style.cursor = 'pointer';
+    modeSwitch.style.touchAction = 'manipulation'; // Improve touch responsiveness
 });
 
 // Add scroll progress indicator

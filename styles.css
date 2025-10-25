@@ -68,7 +68,7 @@ body {
 .nav-menu {
     display: flex;
     list-style: none;
-    gap: 2rem;
+    gap: 3rem;
 }
 
 .nav-menu a {
@@ -288,7 +288,7 @@ footer p {
 .mode-switch {
     position: fixed;
     top: 25px;
-    right: 25px;
+    right: 35px;
     z-index: 1002;
     background: rgba(255, 255, 255, 0.15);
     border: 1px solid rgba(255, 255, 255, 0.3);
@@ -307,6 +307,11 @@ footer p {
     font-size: 1.2rem;
     -webkit-tap-highlight-color: transparent; /* Remove tap highlight on mobile */
     user-select: none; /* Prevent text selection */
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+ */
+    touch-action: manipulation; /* Improve touch responsiveness */
+    -webkit-touch-callout: none; /* iOS Safari */
 }
 
 .mode-switch:hover {
