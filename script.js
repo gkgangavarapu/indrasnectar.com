@@ -101,7 +101,6 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('DOMContentLoaded', function() {
     const modeSwitch = document.getElementById('modeSwitch');
     const modeIcon = modeSwitch.querySelector('.mode-icon');
-    const modeText = modeSwitch.querySelector('.mode-text');
     
     // Check for saved theme preference or default to dark
     const currentTheme = localStorage.getItem('theme') || 'dark';
@@ -110,7 +109,6 @@ document.addEventListener('DOMContentLoaded', function() {
     if (currentTheme === 'light') {
         document.body.classList.add('white-glass');
         modeIcon.textContent = '🌙';
-        modeText.textContent = 'Dark Mode';
     }
     
     // Toggle theme function
@@ -119,13 +117,11 @@ document.addEventListener('DOMContentLoaded', function() {
             // Switch to dark mode
             document.body.classList.remove('white-glass');
             modeIcon.textContent = '☀️';
-            modeText.textContent = 'Light Mode';
             localStorage.setItem('theme', 'dark');
         } else {
             // Switch to light mode
             document.body.classList.add('white-glass');
             modeIcon.textContent = '🌙';
-            modeText.textContent = 'Dark Mode';
             localStorage.setItem('theme', 'light');
         }
         // Update navbar background after theme change

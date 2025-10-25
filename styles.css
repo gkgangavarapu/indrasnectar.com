@@ -180,7 +180,7 @@ body {
 }
 
 .fragrances-section h2 {
-    text-align: center;
+    text-align: cegnter;
     font-size: 1.8rem;
     margin-bottom: 2rem;
     color: #ffffff;
@@ -287,32 +287,36 @@ footer p {
 /* Mode Switch Button */
 .mode-switch {
     position: fixed;
-    top: 20px;
-    right: 20px;
+    top: 25px;
+    right: 25px;
     z-index: 1002;
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 25px;
-    padding: 8px 16px;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
     color: #ffffff;
     cursor: pointer;
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); /* Safari support */
     transition: all 0.3s ease;
-    font-size: 0.9rem;
-    font-weight: 500;
     display: flex;
     align-items: center;
-    gap: 8px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    font-size: 1.2rem;
+    -webkit-tap-highlight-color: transparent; /* Remove tap highlight on mobile */
+    user-select: none; /* Prevent text selection */
 }
 
 .mode-switch:hover {
-    background: rgba(255, 255, 255, 0.2);
-    transform: scale(1.05);
+    background: rgba(255, 255, 255, 0.25);
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
 }
 
-.mode-switch i {
-    font-size: 1rem;
+.mode-switch:active {
+    transform: scale(0.95);
 }
 
 /* White Glass Theme */
@@ -472,9 +476,9 @@ body.white-glass .mode-switch:hover {
     .mode-switch {
         top: 15px;
         right: 15px;
-        padding: 6px 12px;
-        font-size: 0.8rem;
-        gap: 6px;
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
     }
 }
 
@@ -523,8 +527,8 @@ body.white-glass .mode-switch:hover {
     .mode-switch {
         top: 10px;
         right: 10px;
-        padding: 5px 10px;
-        font-size: 0.75rem;
-        gap: 4px;
+        width: 32px;
+        height: 32px;
+        font-size: 0.9rem;
     }
 }
