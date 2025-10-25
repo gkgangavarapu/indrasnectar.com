@@ -43,6 +43,7 @@ body {
 .logo {
     display: flex;
     align-items: center;
+    gap: 15px;
 }
 
 .logo-image {
@@ -54,6 +55,14 @@ body {
 
 .logo-image:hover {
     transform: scale(1.05);
+}
+
+.brand-name {
+    font-family: 'Calibri', 'Candara', 'Segoe', 'Segoe UI', 'Optima', Arial, sans-serif;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #000000;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .nav-menu {
@@ -224,52 +233,6 @@ body {
     box-shadow: 0 10px 30px rgba(76, 175, 80, 0.2);
 }
 
-/* Mythology Section */
-.mythology-section {
-    padding: 100px 0;
-    background: rgba(212, 237, 218, 0.6);
-    backdrop-filter: blur(10px);
-}
-
-.mythology-section h2 {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 3rem;
-    color: #2c3e50;
-}
-
-.mythology-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-}
-
-.myth-card {
-    background: rgba(255, 255, 255, 0.8);
-    padding: 2.5rem;
-    border-radius: 15px;
-    box-shadow: 0 5px 20px rgba(76, 175, 80, 0.1);
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border-top: 4px solid #4CAF50;
-    backdrop-filter: blur(10px);
-}
-
-.myth-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(76, 175, 80, 0.2);
-}
-
-.myth-card h3 {
-    color: #4CAF50;
-    margin-bottom: 1rem;
-    font-size: 1.5rem;
-}
-
-.myth-card p {
-    color: #2c3e50;
-    line-height: 1.6;
-}
 
 
 /* Footer */

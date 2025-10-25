@@ -21,21 +21,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // CTA button functionality
-    const ctaButton = document.querySelector('.cta-button');
-    if (ctaButton) {
-        ctaButton.addEventListener('click', function() {
-            const mythologySection = document.querySelector('#mythology');
-            if (mythologySection) {
-                const offsetTop = mythologySection.offsetTop - 80;
-                
-                window.scrollTo({
-                    top: offsetTop,
-                    behavior: 'smooth'
-                });
-            }
-        });
-    }
 
 
     // Navbar background change on scroll
