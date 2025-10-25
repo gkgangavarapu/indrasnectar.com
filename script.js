@@ -37,38 +37,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Form submission handling
-    const contactForm = document.querySelector('.contact-form');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form data
-            const formData = new FormData(this);
-            const name = formData.get('name') || this.querySelector('input[type="text"]').value;
-            const email = formData.get('email') || this.querySelector('input[type="email"]').value;
-            const message = formData.get('message') || this.querySelector('textarea').value;
-            
-            // Simple validation
-            if (!name || !email || !message) {
-                showNotification('Please fill in all fields.', 'error');
-                return;
-            }
-            
-            // Email validation
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(email)) {
-                showNotification('Please enter a valid email address.', 'error');
-                return;
-            }
-            
-            // Simulate form submission
-            showNotification('Thank you for your message! We\'ll get back to you soon.', 'success');
-            
-            // Reset form
-            this.reset();
-        });
-    }
 
     // Navbar background change on scroll
     window.addEventListener('scroll', function() {

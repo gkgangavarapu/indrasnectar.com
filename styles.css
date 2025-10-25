@@ -170,6 +170,19 @@ body {
     font-style: italic;
 }
 
+.nectar-image {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.nectar-image:hover {
+    transform: scale(1.05);
+}
+
 .placeholder-image {
     background: linear-gradient(135deg, #667eea, #764ba2);
     height: 300px;
