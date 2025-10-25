@@ -22,16 +22,30 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Navbar background change on scroll
-    window.addEventListener('scroll', function() {
+    function updateNavbarBackground() {
         const navbar = document.querySelector('.navbar');
+        const isLightMode = document.body.classList.contains('white-glass');
+        
         if (window.scrollY > 100) {
-            navbar.style.background = 'rgba(0, 0, 0, 0.95)';
-            navbar.style.boxShadow = '0 4px 30px rgba(0, 0, 0, 0.7)';
+            if (isLightMode) {
+                navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+                navbar.style.boxShadow = '0 4px 30px rgba(0, 0, 0, 0.1)';
+            } else {
+                navbar.style.background = 'rgba(0, 0, 0, 0.95)';
+                navbar.style.boxShadow = '0 4px 30px rgba(0, 0, 0, 0.7)';
+            }
         } else {
-            navbar.style.background = 'rgba(0, 0, 0, 0.85)';
-            navbar.style.boxShadow = '0 4px 30px rgba(0, 0, 0, 0.5)';
+            if (isLightMode) {
+                navbar.style.background = 'rgba(255, 255, 255, 0.85)';
+                navbar.style.boxShadow = '0 4px 30px rgba(0, 0, 0, 0.1)';
+            } else {
+                navbar.style.background = 'rgba(0, 0, 0, 0.85)';
+                navbar.style.boxShadow = '0 4px 30px rgba(0, 0, 0, 0.5)';
+            }
         }
-    });
+    }
+    
+    window.addEventListener('scroll', updateNavbarBackground);
 
     // Intersection Observer for fade-in animations
     const observerOptions = {
@@ -81,6 +95,47 @@ document.addEventListener('DOMContentLoaded', function() {
             this.style.transform = 'scale(1)';
         });
     }
+});
+
+// Mode Switch Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const modeSwitch = document.getElementById('modeSwitch');
+    const modeIcon = modeSwitch.querySelector('.mode-icon');
+    const modeText = modeSwitch.querySelector('.mode-text');
+    
+    // Check for saved theme preference or default to dark
+    const currentTheme = localStorage.getItem('theme') || 'dark';
+    
+    // Apply the saved theme
+    if (currentTheme === 'light') {
+        document.body.classList.add('white-glass');
+        modeIcon.textContent = '🌙';
+        modeText.textContent = 'Dark Mode';
+    }
+    
+    // Toggle theme function
+    function toggleTheme() {
+        if (document.body.classList.contains('white-glass')) {
+            // Switch to dark mode
+            document.body.classList.remove('white-glass');
+            modeIcon.textContent = '☀️';
+            modeText.textContent = 'Light Mode';
+            localStorage.setItem('theme', 'dark');
+        } else {
+            // Switch to light mode
+            document.body.classList.add('white-glass');
+            modeIcon.textContent = '🌙';
+            modeText.textContent = 'Dark Mode';
+            localStorage.setItem('theme', 'light');
+        }
+        // Update navbar background after theme change
+        if (typeof updateNavbarBackground === 'function') {
+            updateNavbarBackground();
+        }
+    }
+    
+    // Add click event listener
+    modeSwitch.addEventListener('click', toggleTheme);
 });
 
 // Add scroll progress indicator

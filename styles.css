@@ -284,6 +284,125 @@ footer p {
     color: #b0b0b0;
 }
 
+/* Mode Switch Button */
+.mode-switch {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1002;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 25px;
+    padding: 8px 16px;
+    color: #ffffff;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.mode-switch:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+}
+
+.mode-switch i {
+    font-size: 1rem;
+}
+
+/* White Glass Theme */
+body.white-glass {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    color: #333333;
+}
+
+body.white-glass .navbar {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+body.white-glass .brand-name {
+    color: #333333;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+body.white-glass .nav-menu a {
+    color: #333333;
+}
+
+body.white-glass .nav-menu a:hover {
+    color: #4CAF50;
+    background: rgba(76, 175, 80, 0.15);
+}
+
+body.white-glass .about-section {
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(15px);
+}
+
+body.white-glass .about-section h2 {
+    color: #333333;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+body.white-glass .about-text p {
+    color: #555555;
+}
+
+body.white-glass .fragrances-section {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(15px);
+}
+
+body.white-glass .fragrances-section h2 {
+    color: #333333;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+body.white-glass .fragrance-card {
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+body.white-glass .fragrance-card:hover {
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+body.white-glass .fragrance-details h3 {
+    color: #333333;
+}
+
+body.white-glass .fragrance-description {
+    color: #666666;
+}
+
+body.white-glass footer {
+    background: rgba(255, 255, 255, 0.9);
+    color: #333333;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+body.white-glass footer p {
+    color: #666666;
+}
+
+body.white-glass .mode-switch {
+    background: rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    color: #333333;
+}
+
+body.white-glass .mode-switch:hover {
+    background: rgba(0, 0, 0, 0.2);
+}
+
 /* Animations */
 @keyframes fadeInUp {
     from {
